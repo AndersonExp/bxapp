@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps para Celular Android - bxapp.pro</title>
+    <script>
+        // Verificar se o acesso é legítimo (executado antes de carregar a página)
+        if (!sessionStorage.getItem('accessGranted')) {
+            window.location.replace('index.html');
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .header-title {
+            background: #FFD700;
+            color: #000;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        .subsection-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #666;
+            text-align: center;
+            margin: 20px 0 12px 0;
+        }
+
+        .apps-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .app-button {
+            width: 100%;
+            max-width: 280px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .app-button:hover {
+            transform: translateY(-5px);
+            filter: brightness(1.1);
+        }
+
+        .app-button img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 18px;
+                padding: 15px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 16px;
+            }
+
+            .subsection-title {
+                font-size: 14px;
+            }
+
+            .app-button {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-title">
+            📱 APLICATIVOS PARA CELULAR ANDROID
+        </div>
+
+        <!-- SEÇÃO 1: APLICATIVOS DE CANAIS - TV AO VIVO -->
+        <div class="section">
+            <div class="section-title">
+                📡 APLICATIVOS DE CANAIS - TV AO VIVO
+            </div>
+
+            <div class="subsection-title">
+                ☀️ Aplicativos de Canais ao vivo
+            </div>
+            <div class="apps-column">
+                <a href="#" class="app-button" onclick="downloadApp('mobi1'); return false;">
+                    <img src="images/mobi1.png" alt="App 1">
+                </a>
+                <a href="#" class="app-button" onclick="downloadApp('mobi2'); return false;">
+                    <img src="images/mobi2.png" alt="App 2">
+                </a>
+            </div>            
+
+            <div class="subsection-title">
+                🔥 Aplicativos de Canais + Filmes/Séries
+            </div>
+            <div class="apps-column">
+                <a href="#" class="app-button" onclick="downloadApp('mobi3'); return false;">
+                    <img src="images/mobi3.png" alt="App 3">
+                </a>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2: APLICATIVOS DE FILMES E SÉRIES -->
+        <div class="section">
+            <div class="section-title">
+                🎬 APLICATIVOS DE FILMES E SÉRIES (ON-DEMAND)
+            </div>
+
+            <div class="apps-column">
+                <a href="#" class="app-button" onclick="downloadApp('mob4'); return false;">
+                    <img src="images/mob4.png" alt="App 4">
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            🌐 bxapp.pro<br>
+            © 2025 - Todos os direitos reservados
+        </div>
+    </div>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://contate.me/ajudazap" target="_blank" class="whatsapp-float" id="whatsappButton">
+        <svg class="whatsapp-icon" viewBox="0 0 32 32" fill="white">
+            <path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.737 5.482 2.031 7.794L.05 31.95l8.344-2.031A15.922 15.922 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333c-2.606 0-5.081-.75-7.181-2.05l-.519-.3-5.381 1.313 1.344-5.244-.331-.544A13.233 13.233 0 012.667 16c0-7.363 5.969-13.333 13.333-13.333S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.294-9.956c-.4-.2-2.369-1.169-2.737-1.3-.369-.131-.637-.2-.906.2-.269.4-1.037 1.3-1.269 1.569-.231.269-.462.3-.862.1-.4-.2-1.688-.619-3.213-1.975-1.188-1.056-1.988-2.362-2.219-2.762-.231-.4-.025-.619.175-.819.181-.181.4-.469.6-.706.2-.231.269-.4.4-.669.131-.269.069-.5-.031-.7-.1-.2-.906-2.181-1.244-2.987-.331-.788-.662-.681-.906-.694-.231-.012-.5-.012-.769-.012s-.706.1-1.075.5c-.369.4-1.406 1.375-1.406 3.356s1.438 3.894 1.637 4.162c.2.269 2.825 4.313 6.844 6.05.956.413 1.7.656 2.281.844.956.3 1.825.256 2.513.156.769-.112 2.369-.969 2.7-1.906.331-.938.331-1.738.231-1.906-.1-.169-.369-.269-.769-.469z"/>
+        </svg>
+        <span class="whatsapp-text" id="whatsappText">💬 Precisa de ajuda?</span>
+    </a>
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border-radius: 50px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            z-index: 9999;
+            transition: all 0.3s ease;
+            animation: pulse-shadow 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-icon {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+        }
+
+        .whatsapp-text {
+            white-space: nowrap;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes pulse-shadow {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px 15px;
+                font-size: 13px;
+            }
+            .whatsapp-icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    </style>
+
+    <script>
+        function downloadApp(appCode) {
+            // CONFIGURE AQUI OS LINKS DE DOWNLOAD DOS SEUS APKs
+            const downloadLinks = {
+                'mobi1': 'https://bxapp.pro/downloads/b1u3_tv-mob.apk',
+                'mobi2': 'https://bxapp.pro/downloads/r3d_p1ay-mob.apk',
+                'mobi3': 'https://bxapp.pro/downloads/u31t7-mob.apk',
+                'mob4': 'https://bxapp.pro/downloads/c1n3_2_mobile.apk'
+            };
+
+            const url = downloadLinks[appCode];
+            if (url && !url.startsWith('URL_DO_APK_')) {
+                window.location.href = url;
+            } else {
+                alert('Link de download não configurado.');
+            }
+        }
+
+        // Alternar texto do botão WhatsApp
+        const texts = ['💬 Precisa de ajuda?', '💰 Compre sua recarga'];
+        let currentIndex = 0;
+        const whatsappText = document.getElementById('whatsappText');
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % texts.length;
+            whatsappText.style.animation = 'none';
+            setTimeout(() => {
+                whatsappText.textContent = texts[currentIndex];
+                whatsappText.style.animation = 'fadeIn 0.5s ease';
+            }, 50);
+        }, 3000);
+    </script>
+</body>
+</html>
+

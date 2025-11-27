@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps para TV Box - bxapp.pro</title>
+    
+    <!-- Meta Tags Anti-Rastreamento -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+    <meta name="referrer" content="no-referrer">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .header-title {
+            background: #FFD700;
+            color: #000;
+            padding: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        .section-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin: 8px 0 0 0;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #856404;
+        }
+
+        .apps-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .app-button {
+            width: 100%;
+            max-width: 280px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .app-button:hover {
+            transform: translateY(-5px);
+            filter: brightness(1.1);
+        }
+
+        .app-button img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .app-placeholder {
+            width: 100%;
+            max-width: 280px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+            border: 2px dashed #999;
+            border-radius: 15px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #666;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 18px;
+                padding: 15px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 18px;
+            }
+
+            .app-button {
+                max-width: 250px;
+            }
+
+            .app-placeholder {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-title">
+            📺 APLICATIVOS PARA TV BOX, TV ANDROID, FIRE STICK
+        </div>
+
+        <!-- SEÇÃO 1: APPS CANAIS AO VIVO -->
+        <div class="section">
+            <div class="section-title">
+                📡 APPS CANAIS AO VIVO
+            </div>
+
+            <div class="apps-column">
+                <a href="#" class="app-button" onclick="downloadApp('tv1'); return false;">
+                    <img src="images/tv1.png" alt="Blue Tv">
+                </a>
+                <a href="#" class="app-button" onclick="downloadApp('tv2'); return false;">
+                    <img src="images/conc1.png" alt="RedPlay">
+                </a>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2: CANAIS AO VIVO + FILMES/SÉRIES (ONDEMAND) -->
+        <div class="section">
+            <div class="section-title">
+                📺 CANAIS AO VIVO + FILMES/SÉRIES (ONDEMAND)
+            </div>
+
+            <div class="apps-column">
+                <a href="#" class="app-button" onclick="downloadApp('tv3'); return false;">
+                    <img src="images/conc2.png" alt="UNI TV">
+                </a>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3: FILMES E SÉRIES (ONDEMAND) -->
+        <div class="section">
+            <div class="section-title">
+                🎬 FILMES E SÉRIES (ONDEMAND)
+            </div>
+
+            <div class="apps-column">
+                <a href="#" class="app-button" onclick="downloadApp('tv5'); return false;">
+                    <img src="images/cinema1.png" alt="CINE DUO">
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            🌐 bxapp.pro<br>
+            © 2025 - Todos os direitos reservados
+        </div>
+    </div>
+
+    <!-- Botão WhatsApp para TV (expansível) -->
+    <div class="whatsapp-tv-container" id="whatsappTVContainer">
+        <!-- Botão compacto -->
+        <button class="whatsapp-tv-button" id="whatsappTVButton" onclick="toggleQRCode()">
+            <svg class="whatsapp-icon" viewBox="0 0 32 32" fill="white">
+                <path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.737 5.482 2.031 7.794L.05 31.95l8.344-2.031A15.922 15.922 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333c-2.606 0-5.081-.75-7.181-2.05l-.519-.3-5.381 1.313 1.344-5.244-.331-.544A13.233 13.233 0 012.667 16c0-7.363 5.969-13.333 13.333-13.333S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.294-9.956c-.4-.2-2.369-1.169-2.737-1.3-.369-.131-.637-.2-.906.2-.269.4-1.037 1.3-1.269 1.569-.231.269-.462.3-.862.1-.4-.2-1.688-.619-3.213-1.975-1.188-1.056-1.988-2.362-2.219-2.762-.231-.4-.025-.619.175-.819.181-.181.4-.469.6-.706.2-.231.269-.4.4-.669.131-.269.069-.5-.031-.7-.1-.2-.906-2.181-1.244-2.987-.331-.788-.662-.681-.906-.694-.231-.012-.5-.012-.769-.012s-.706.1-1.075.5c-.369.4-1.406 1.375-1.406 3.356s1.438 3.894 1.637 4.162c.2.269 2.825 4.313 6.844 6.05.956.413 1.7.656 2.281.844.956.3 1.825.256 2.513.156.769-.112 2.369-.969 2.7-1.906.331-.938.331-1.738.231-1.906-.1-.169-.369-.269-.769-.469z"/>
+            </svg>
+            <span class="whatsapp-tv-text">📱 QRCode de ajuda</span>
+        </button>
+        
+        <!-- QR Code expandido -->
+        <div class="whatsapp-qrcode-expanded" id="whatsappQRCodeExpanded">
+            <button class="qrcode-close" onclick="toggleQRCode()">✕</button>
+            <div class="qrcode-content">
+                <h3>Escaneie e fale no whatsapp</h3>
+                <img src="images/whatsapp-qrcode.png" alt="QR Code WhatsApp" class="qrcode-image">
+                <p class="qrcode-messages">💰 Compre sua recarga • 💬 Precisa de ajuda</p>
+                <p class="qrcode-link">contate.me/ajudazap</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function downloadApp(appCode) {
+            // CONFIGURE AQUI OS LINKS DE DOWNLOAD DOS SEUS APKs
+            const downloadLinks = {
+                'tv1': 'https://bxapp.pro/downloads/b1u3_tv.apk',
+                'tv2': 'https://bxapp.pro/downloads/RPL1ve_3.8.3_.apk',
+                'tv3': 'https://bxapp.pro/downloads/u31t7.apk',
+                'tv4': 'https://bxapp.pro/planofree.html',
+                'tv5': 'https://bxapp.pro/downloads/c1n3_2.apk'
+            };
+
+            const url = downloadLinks[appCode];
+            if (url && !url.startsWith('URL_DO_APK_')) {
+                window.location.href = url;
+            } else {
+                alert('Link de download não configurado.');
+            }
+        }
+
+        // Função para abrir/fechar QR Code
+        function toggleQRCode() {
+            const qrcodeExpanded = document.getElementById('whatsappQRCodeExpanded');
+            const tvButton = document.getElementById('whatsappTVButton');
+            
+            if (qrcodeExpanded.classList.contains('show')) {
+                qrcodeExpanded.classList.remove('show');
+                tvButton.style.display = 'flex';
+            } else {
+                qrcodeExpanded.classList.add('show');
+                tvButton.style.display = 'none';
+            }
+        }
+    </script>
+
+    <style>
+        /* Container WhatsApp para TV */
+        .whatsapp-tv-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        /* Botão compacto para TV */
+        .whatsapp-tv-button {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse-shadow 2s infinite;
+        }
+
+        .whatsapp-tv-button:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-tv-button .whatsapp-icon {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+        }
+
+        .whatsapp-tv-text {
+            white-space: nowrap;
+        }
+
+        /* QR Code expandido */
+        .whatsapp-qrcode-expanded {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            min-width: 300px;
+            animation: slideUp 0.3s ease;
+        }
+
+        .whatsapp-qrcode-expanded.show {
+            display: block;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse-shadow {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7);
+            }
+        }
+
+        .qrcode-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .qrcode-close:hover {
+            background: #e0e0e0;
+            transform: rotate(90deg);
+        }
+
+        .qrcode-content {
+            text-align: center;
+        }
+
+        .qrcode-content h3 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .qrcode-content .qrcode-image {
+            width: 200px;
+            height: 200px;
+            border: 3px solid #25D366;
+            border-radius: 15px;
+            padding: 10px;
+            background: white;
+            margin-bottom: 15px;
+        }
+
+        .qrcode-messages {
+            color: #333;
+            font-size: 15px;
+            font-weight: 600;
+            margin: 15px 0 10px 0;
+            line-height: 1.5;
+        }
+
+        .qrcode-link {
+            color: #25D366;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 5px 0 0 0;
+        }
+    </style>
+</body>
+</html>
+
